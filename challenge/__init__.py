@@ -3,7 +3,7 @@ from pyramid.session import SignedCookieSessionFactory
 from sqlalchemy import engine_from_config
 
 
-session_factory = SignedCookieSessionFactory('itsaseekreet')
+session_factory = SignedCookieSessionFactory('secret', max_age='1200')
 
 def main(global_config, **settings):
     config = Configurator(settings=settings)
